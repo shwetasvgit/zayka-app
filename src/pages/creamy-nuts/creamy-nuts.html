@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Creamy Nuts Menu</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-card>   
+  </ion-card>
+  <ion-list>
+  <ion-label color="mustard"><h4>BURGERS</h4></ion-label>
+    <ion-item *ngFor="let burger of burgers">
+      <ion-label>{{burger.Name}}</ion-label>
+       
+   <ion-checkbox item-right color="dark" (click)="selectMember(burger)" [(ngModel)]="burger.checked">
+    </ion-checkbox>
+    </ion-item>
+   <ion-label color="mustard"><h4>TOASTS</h4></ion-label>
+     <ion-item *ngFor="let toast of toasts">
+        <ion-label>{{toast.Name}}</ion-label>
+        <ion-checkbox item-right color="dark" (click)="selectMember(toast)" [(ngModel)]="toast.checked">
+    </ion-checkbox>
+      </ion-item>
+  <ion-label color="mustard"><h4>TWISTOS</h4></ion-label>
+     <ion-item *ngFor="let twisto of twistos">
+        <ion-label>{{twisto.Name}}</ion-label>
+        <ion-checkbox item-right color="dark" (click)="selectMember(twisto)" [(ngModel)]="twisto.checked">
+    </ion-checkbox>
+      </ion-item>
+  </ion-list>
+  <button ion-button full  (click)= "orderSummary()"> Go To Cart </button> 
+</ion-content>

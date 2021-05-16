@@ -1,0 +1,58 @@
+<html ng-app="ionicApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+   
+  <!--  <title>Ionic Template</title>
+    <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+    <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script> -->
+ </head> 
+
+  <body ng-controller="MyCtrl as ctrl">
+    <ion-header class="bar-stable">
+        <ion-navbar>
+    <ion-title>Order Summary</ion-title>
+    </ion-navbar>
+
+    </ion-header>
+    <ion-content>
+        <div class="row header">
+          <div class="col">Item </div>
+          <div class="col">Qty</div>
+          <div class="col">Rate</div>
+          <div class="col">Amount</div>
+        </div>
+        <div class="row" *ngFor="let order of orderItem">
+          <div class="col">{{order.Name}}</div>
+          <div class="col">{{order.Quantity}}</div>
+          <div class="col"> {{order.Price}}</div>
+          <div class="col">{{order.Price * order.Quantity}}</div>          
+        </div>
+        <button ion-button full  (click)= "sum()"> View total Amount </button>
+      <div *ngIf="buttonClicked">
+
+          <div class="row">
+          <div class="col">Amount</div>
+          <div class="col">{{totalsum}}</div>
+          </div>
+          <div class="row">
+          <div class="col">CGST 2.5% </div>
+          <div class="col">{{0.025*totalsum}}</div>
+          </div>
+          <div class="row">
+          <div class="col">SGST 2.5% </div>
+          <div class="col">{{0.025*totalsum}}</div>
+          </div>
+          <div class="row">
+          <div class="col">Total Amount</div>
+          <div class="col">{{totalsum+(0.05*totalsum)}}</div>
+          </div>
+      </div>
+
+        <button ion-button full  (click)= "placeFinalOrder()"> Place Order </button> 
+        </ion-content>
+        
+  </body>
+
+</html>

@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Cart</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+<ion-list>
+  <ion-label text-center color="mustard"><h4> YOUR ORDER</h4></ion-label>
+  
+  <ion-label class="left">Item name</ion-label>
+  <ion-label  class="right">Quantity</ion-label>
+    <ion-item *ngFor="let order of orderItem">    
+      <ion-label fixed class= "my-label" color=dark>{{order.Name}}</ion-label>      
+     <!--  <ion-input type="text" align= "right" [(ngModel)]= "order.Quantity"> </ion-input> -->
+       
+      <ion-icon item-right name="remove-circle" (click)="removeItem(order)"></ion-icon>
+      <ion-icon item-right name="add-circle" (click)="addItem(order)" ></ion-icon> -->
+       <ion-label fixed text-right>{{orderQuant}}</ion-label> 
+   
+    </ion-item>
+    </ion-list>
+  <button ion-button full  (click)= "submitOrder(order)"> Place Order </button> 
+</ion-content>

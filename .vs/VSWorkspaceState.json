@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\plugins",
+    "\\resources\\android",
+    "\\src",
+    "\\src\\app",
+    "\\src\\assets",
+    "\\src\\pages",
+    "\\src\\pages\\billing",
+    "\\src\\pages\\home",
+    "\\src\\pages\\sign-up"
+  ],
+  "SelectedNode": "\\src\\app\\credentials.ts",
+  "PreviewInSolutionExplorer": false
+}
